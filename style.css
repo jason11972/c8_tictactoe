@@ -1,0 +1,19 @@
+.container-fluid{
+    border: 10px solid black;
+    height: 100vh;
+}
+.heading{
+    text-align: center;
+}
+.player_nav{
+    width: 90vw;
+    height: 10vh;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.box3{
+    width:50% ;
+    height: 50vh;
+    margin: auto;
+}
