@@ -31,15 +31,15 @@ header {
 
 }
 .game_area {
-    width:80vw;
-    height:80vh;
-    float:right;
+    width:84.5vh;
+    height:84.5vh;
     box-sizing:border-box;
     text-align:center;
-    margin-top:1%;
     cursor: url("images/blueX1.png"), auto;
     border: solid darkblue;
     background:transparent;
+    float:left;
+    margin-top:.5%;
 }
 
 .statssidebar {
@@ -50,7 +50,8 @@ header {
     font-family: "Comic Sans MS"
 }
 .statsbar {
-    margin: 7% 75% 0 0;
+    float:left;
+    display:inline-flex;
 }
 .games-played, .attempts, .accuracy {
     margin-top:10%;
