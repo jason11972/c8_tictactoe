@@ -1,11 +1,12 @@
 body{
     margin: 0;
+    background-image: url('http://www.themesltd.com/backgrounds/random/blue_lego.png');
+
 }
 
 .container-fluid{
     border: 10px solid black;
     height: 100vh;
-    background-image: url('http://www.themesltd.com/backgrounds/random/blue_lego.png');
 }
 
 /*body {*/
@@ -17,7 +18,7 @@ body{
 /*}*/
 
 .game_board{
-    width:75vw;
+    width:60vw;
     height:75vh;
     border:1vh solid black;
     margin: auto;
@@ -38,7 +39,6 @@ header {
     width: 100%;
     color: deeppink;
     font-size: 3vh;
-    background-image: url("images/xoxoxox2.jpg");
     border: solid darkblue;
     font-family: "Comic Sans MS";
     display:inline-block;
