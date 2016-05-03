@@ -1,19 +1,55 @@
 /**
  * Created by jar4677 on 5/3/16.
  */
+
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
-    var gameBoard = new TicTacToe(10, 3);
+    var gameBoard = new TicTacToe(4, 3);
     gameBoard.buildBoard();
 
-    $("#board").on("click", ".square", function () {
-        var id = this.attr("square");
-        //TODO Player object which has the value
-        var value = 'x';
-        gameBoard.clicked(id, value);
+    player1 = new Player("Jon", "x");
+    player2 = new Player("Jason", "o");
+
+    //hard coding creating a player, make dynamic
+    currentPlayer = player1;
+
+    $("#X").click(function () {
+        console.log('X clicked');
+       //current player value becomes 'x'
+        currentPlayer.value = 'x';
+        console.log(currentPlayer);
+        $(".game-area").addClass('x').removeClass('o');
     });
-    
+
+    $("#O").click(function () {
+        //current player value becomes 'o'
+        console.log('O clicked');
+        currentPlayer.value = 'o';
+        console.log(currentPlayer);
+        $(".game-area").addClass('o').removeClass('x');
+    });
+
+    $("#game-area").on("click", "div.square", function () {
+    // $(".square").on("click", function () {
+        var id = $(this).attr("square");
+        var value = currentPlayer.value;
+
+        //set value to square
+        $(this).text(value);
+
+        //switch players
+        if(currentPlayer == player1){
+            currentPlayer = player2;
+        } else {
+            currentPlayer = player1;
+        }
+
+        gameBoard.clicked(id, value);
+
+    });
 });
+
+
 
 function TicTacToe(number, win) {
     this.number = number;
@@ -113,6 +149,8 @@ function TicTacToe(number, win) {
         }
         while (x < this.number && y >= 0) {
             rightWin.push('' + x + y);
+            x++;
+            y--;
         }
         return rightWin;
     };
@@ -131,15 +169,11 @@ function TicTacToe(number, win) {
         }
         return (match == this.win);
     };
+}
 
-    this.domObj = function (id) {
-        // for (var i = 0; i < this.number * this.number; i++) {
-            var square = $("<div>").addClass('square').css({
-                'width': (100 / this.number) + "%",
-                'height': (100 / this.number) + "%"
-            }).attr("square", id);
-            $(".game_board").append(square);
-        // }
-    };
+//CONSTRUCTOR FOR PLAYER
+function Player(name, value) {
+    this.name = name;
+    this.value = value;
 }
 
