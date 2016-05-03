@@ -23,16 +23,16 @@ body{
     float: left;
     margin: auto;
     margin-bottom: 2%;
-    background-color:black;
-    opacity: 0.5;
+    /*background-color:black;*/
+    /*opacity: 0.5;*/
     cursor: url("images/blueX1.png"), auto;
 }
 
 .square{
     box-sizing:border-box;
     float:left;
-    background-color:red;
-    border:1px solid white;
+    /*background-color:red;*/
+    border:1px solid black;
 }
 
 header {

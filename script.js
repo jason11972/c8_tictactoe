@@ -3,7 +3,7 @@
  */
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
-    var gameBoard = new TicTacToe(4, 3);
+    var gameBoard = new TicTacToe(10, 3);
     gameBoard.buildBoard();
 
     $("#board").on("click", ".square", function () {
