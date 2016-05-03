@@ -7,6 +7,7 @@ $(document).ready(function () {
     var gameBoard = new TicTacToe(4, 3);
     gameBoard.buildBoard();
 
+    
     player1 = new Player("Jon", "x");
     player2 = new Player("Jason", "o");
 
@@ -49,16 +50,14 @@ $(document).ready(function () {
     });
 });
 
-
-
+//CONSTRUCTOR FOR GAME
 function TicTacToe(number, win) {
     this.number = number;
     this.win = win;
     this.sqArray = [];
     this.valueArray = [];
     this.squaresFilled = 0;
-
-
+    
     //Method To Build Board
     this.buildBoard = function () {
         for (var i = 0; i < this.number; i++) {
