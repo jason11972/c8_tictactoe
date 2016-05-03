@@ -1,6 +1,7 @@
 .container-fluid{
     border: 10px solid black;
-    height: 120vh;
+    height: 100vh;
+    background-image: url('http://www.themesltd.com/backgrounds/random/blue_lego.png');
 }
 .heading{
     text-align: center;
@@ -10,34 +11,22 @@
     height: 10vh;
     border: 1px solid black;
     margin: auto;
+    background-color: red;
+    opacity: 0.5;
 }
-.row{
-    height: 33%;
-    border: 1px solid black;
+.game_board{
+    width:75vw;
+    height:75vh;
+    border:1vh solid black;
+    margin: auto;
+    margin-bottom: 2%;
+    background-color:black;
+    opacity: 0.5;
 }
+.card{
+    box-sizing:border-box;
+    float:left;
+    background-color:red;
+    border:1px solid white;
 
-.box3{
-    width:50% ;
-    height: 50vh;
-    margin: auto;
-    border: 1px solid black;
-    margin-bottom: 2%;
-    #display: none;
-
-}
-.box4{
-    width: 70%;
-    height: 70vh;
-    margin: auto;
-    border: 1px solid black;
-    margin-bottom: 2%;
-    display: none;
-}
-.box6{
-    width: 90%;
-    height: 90vh;
-    margin: auto;
-    border: 1px solid black;
-    margin-bottom: 2%;
-    display: none;
 }
