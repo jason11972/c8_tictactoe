@@ -1,19 +1,21 @@
+body{
+    margin: 0;
+}
+
 .container-fluid{
     border: 10px solid black;
     height: 100vh;
     background-image: url('http://www.themesltd.com/backgrounds/random/blue_lego.png');
 }
-.heading{
-    text-align: center;
-}
-.player_nav{
-    width: 90vw;
-    height: 10vh;
-    border: 1px solid black;
-    margin: auto;
-    background-color: red;
-    opacity: 0.5;
-}
+
+/*body {*/
+    /*background-image: url("images/tic-tac-toe-background-14627769.jpg");*/
+    /*background-repeat:no-repeat;*/
+    /*background-size:100%;*/
+    /*padding-top:0;*/
+    /*margin-top:0;*/
+/*}*/
+
 .game_board{
     width:75vw;
     height:75vh;
@@ -22,11 +24,64 @@
     margin-bottom: 2%;
     background-color:black;
     opacity: 0.5;
+    cursor: url("images/blueX1.png"), auto;
 }
+
 .card{
     box-sizing:border-box;
     float:left;
     background-color:red;
     border:1px solid white;
+}
 
+header {
+    width: 100%;
+    color: deeppink;
+    font-size: 3vh;
+    background-image: url("images/xoxoxox2.jpg");
+    border: solid darkblue;
+    font-family: "Comic Sans MS";
+    display:inline-block;
+    text-align:center;
+    font-weight: bold;
+}
+
+.navbar {
+    font-size: 20px;
+    list-style-type: none;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    color:deeppink;
+}
+
+.play, .settings, .about  {
+    margin:1%;
+
+}
+
+.statssidebar {
+    color:darkblue;
+    font-size:30px;
+    list-style-type:none;
+    margin:0;
+    font-family: Arial, sans-serif;
+}
+
+.statsbar {
+    float:left;
+    display:inline-flex;
+}
+
+.games-played, .attempts, .accuracy {
+    margin-top:10%;
+}
+
+.chooseX, .chooseO {
+    font-size:40px;
+    margin: 5% 0 5% 10%;
+    background-color:darkblue;
+    font-family: Arial, sans-serif;
+    color:white;
+    float:left;
 }

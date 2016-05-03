@@ -2,28 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>TicTacToe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script><!--bootstrap file-->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Tic Tac Toe</title>
     <script src="script.js"></script>
 </head>
 <body>
-<div class="container-fluid">
-    <h1 class="heading">Tic Tac Toe</h1>
+<header>
+    <br>TIC-TAC-TOE</br>
+    <ul class="navbar">
+        <li class="play"><a href="#play">PLAY</a></li>
+        <li class="settings"><a href="#settings">SETTINGS</a></li>
+        <li class="about"><a href="about.html">ABOUT</a></li>
+    </ul>
+</header>
+
+<!--STATS sidebar-->
+<div class="statsbar">
+    <ul class="statssidebar">
+        <li class="games-played">Games Played:</li>
+        <li class="valueTBD1">Value TBD:</li>
+        <li class="valueTBD2">Value TBD:</li>
+        <!--choose X-->
+        <button class="chooseX" type="button">Choose X!</button>
+        <!--choos 0-->
+        <button class="chooseO" type="button">Choose 0!</button>
+    </ul>
+</div>
     <div class="game_board">
 
     </div>
-
-    <div class="player_nav">
-
-    </div>
-
-</div>
-
-
 </body>
 </html>
