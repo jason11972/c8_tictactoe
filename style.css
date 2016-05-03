@@ -1,0 +1,32 @@
+.container-fluid{
+    border: 10px solid black;
+    height: 100vh;
+    background-image: url('http://www.themesltd.com/backgrounds/random/blue_lego.png');
+}
+.heading{
+    text-align: center;
+}
+.player_nav{
+    width: 90vw;
+    height: 10vh;
+    border: 1px solid black;
+    margin: auto;
+    background-color: red;
+    opacity: 0.5;
+}
+.game_board{
+    width:75vw;
+    height:75vh;
+    border:1vh solid black;
+    margin: auto;
+    margin-bottom: 2%;
+    background-color:black;
+    opacity: 0.5;
+}
+.card{
+    box-sizing:border-box;
+    float:left;
+    background-color:red;
+    border:1px solid white;
+
+}
