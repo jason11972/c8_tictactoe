@@ -45,8 +45,8 @@ $(document).ready(function () {
             currentPlayer = player1;
         }
 
+        //call clicked method
         gameBoard.clicked(id, value);
-
     });
 });
 
