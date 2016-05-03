@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-image: url('images/tic-tac-toe-background-14627769.jpg');
+ /*  background-image: url('images/endless_tic_tac_toe_wallpaper_by_wuflux_biscuits-d3d07m5.jpg');  */
 }
 
 .container-fluid{
@@ -80,8 +80,8 @@ header {
 }
 
 .chooseX, .chooseO {
-    font-size:40px;
-    margin: 5% 0 5% 10%;
+    font-size:50px;
+    margin: 0 0 0 1%;
     background-color:darkblue;
     font-family: Arial, sans-serif;
     color:white;
