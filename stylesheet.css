@@ -1,0 +1,69 @@
+body {
+    background-image: url("images/tic-tac-toe-background-14627769.jpg");
+    background-repeat:no-repeat;
+    background-size:100%;
+    padding-top:0;
+    margin-top:0;
+    perspective:1200px;
+
+}
+
+
+header {
+    width: 100%;
+    color: deeppink;
+    font-size: 3vh;
+    background-image: url("images/xoxoxox2.jpg");
+    border: solid darkblue;
+    font-family: "Comic Sans MS";
+    display:inline-block;
+    text-align:center;
+    font-weight: bold;
+}
+.navbar {
+    font-size: 20px;
+    list-style-type: none;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    color:deeppink;
+}
+.play, .settings, .about  {
+    margin:1%;
+
+}
+.game_area {
+    width:80vw;
+    height:80vh;
+    float:right;
+    box-sizing:border-box;
+    text-align:center;
+    margin-top:1%;
+    cursor: url("images/blueX.jpg"), auto;
+    background: transparent;
+    border: solid darkblue;
+}
+.blue_across {
+
+}
+.statssidebar {
+    color:darkblue;
+    font-size:30px;
+    list-style-type:none;
+    margin:0;
+    font-family: "Comic Sans MS"
+}
+.statsbar {
+    margin: 7% 75% 0 0;
+}
+.games-played, .attempts, .accuracy {
+    margin-top:10%;
+}
+.chooseX, .chooseO {
+    font-size:40px;
+    margin: 5% 0 5% 10%;
+    background-color:darkblue;
+    font-family: "Comic Sans MS";
+    color:white;
+    float:left;
+}
