@@ -1,6 +1,6 @@
 .container-fluid{
     border: 10px solid black;
-    height: 100vh;
+    height: 120vh;
 }
 .heading{
     text-align: center;
@@ -11,9 +11,33 @@
     border: 1px solid black;
     margin: auto;
 }
+.row{
+    height: 33%;
+    border: 1px solid black;
+}
 
 .box3{
     width:50% ;
     height: 50vh;
     margin: auto;
+    border: 1px solid black;
+    margin-bottom: 2%;
+    #display: none;
+
+}
+.box4{
+    width: 70%;
+    height: 70vh;
+    margin: auto;
+    border: 1px solid black;
+    margin-bottom: 2%;
+    display: none;
+}
+.box6{
+    width: 90%;
+    height: 90vh;
+    margin: auto;
+    border: 1px solid black;
+    margin-bottom: 2%;
+    display: none;
 }
