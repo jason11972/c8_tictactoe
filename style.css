@@ -1,11 +1,39 @@
-body {
-    background-image: url("images/tic-tac-toe-background-14627769.jpg");
-    background-repeat:no-repeat;
-    background-size:100%;
-    padding-top:0;
-    margin-top:0;
+body{
+    margin: 0;
+    background-image: url('images/tic-tac-toe-background-14627769.jpg');
 }
 
+.container-fluid{
+    border: 10px solid black;
+    height: 100vh;
+
+}
+
+/*body {*/
+    /*background-image: url("images/tic-tac-toe-background-14627769.jpg");*/
+    /*background-repeat:no-repeat;*/
+    /*background-size:100%;*/
+    /*padding-top:0;*/
+    /*margin-top:0;*/
+/*}*/
+
+.game_board{
+    width:75vw;
+    height:75vh;
+    border:1vh solid black;
+    margin: auto;
+    margin-bottom: 2%;
+    background-color:black;
+    opacity: 0.5;
+    cursor: url("images/blueX1.png"), auto;
+}
+
+.card{
+    box-sizing:border-box;
+    float:left;
+    background-color:red;
+    border:1px solid white;
+}
 
 header {
     width: 100%;
@@ -18,6 +46,7 @@ header {
     text-align:center;
     font-weight: bold;
 }
+
 .navbar {
     font-size: 20px;
     list-style-type: none;
@@ -26,20 +55,10 @@ header {
     padding: 0;
     color:deeppink;
 }
+
 .play, .settings, .about  {
     margin:1%;
 
-}
-.game_area {
-    width:84.5vh;
-    height:84.5vh;
-    box-sizing:border-box;
-    text-align:center;
-    cursor: url("images/blueX1.png"), auto;
-    border: solid darkblue;
-    background:transparent;
-    float:left;
-    margin-top:.5%;
 }
 
 .statssidebar {
@@ -47,20 +66,23 @@ header {
     font-size:30px;
     list-style-type:none;
     margin:0;
-    font-family: "Comic Sans MS"
+    font-family: Arial, sans-serif;
 }
+
 .statsbar {
     float:left;
     display:inline-flex;
 }
+
 .games-played, .attempts, .accuracy {
     margin-top:10%;
 }
+
 .chooseX, .chooseO {
     font-size:40px;
     margin: 5% 0 5% 10%;
     background-color:darkblue;
-    font-family: "Comic Sans MS";
+    font-family: Arial, sans-serif;
     color:white;
     float:left;
 }
