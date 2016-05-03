@@ -17,9 +17,10 @@ body{
 /*}*/
 
 .game_board{
-    width:75vw;
+    width:75vh;
     height:75vh;
     border:1vh solid black;
+    float: left;
     margin: auto;
     margin-bottom: 2%;
     background-color:black;
@@ -27,7 +28,7 @@ body{
     cursor: url("images/blueX1.png"), auto;
 }
 
-.card{
+.square{
     box-sizing:border-box;
     float:left;
     background-color:red;
