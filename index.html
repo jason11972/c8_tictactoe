@@ -14,20 +14,15 @@
 </head>
 <body>
 <header>
-    <br>TIC-TAC-TOE</br>
-    <ul class="navbar">
-        <li class="play"><a href="#play">PLAY</a></li>
-        <li class="settings"><a href="#settings">SETTINGS</a></li>
-        <li class="about"><a href="about.html">ABOUT</a></li>
-    </ul>
+    <h1>TIC-TAC-TOE</h1>
+    <!--<ul class="navbar">-->
+        <!--<li class="play"><a href="#play">PLAY</a></li>-->
+        <!--<li class="settings"><a href="#settings">SETTINGS</a></li>-->
+        <!--<li class="about"><a href="about.html">ABOUT</a></li>-->
+    <!--</ul>-->
 </header>
-
 <!--STATS sidebar-->
-<div class="statsbar">
-    <ul class="statssidebar">
-        <li class="games-played">Games Played:</li>
-        <li class="valueTBD1">Value TBD:</li>
-        <li class="valueTBD2">Value TBD:</li>
+<div class="statsBar">
         <!--choose X-->
         <button class="chooseX" id="X" type="button">Choose X!</button>
         <!--choos 0-->
@@ -37,5 +32,24 @@
     <div class="game_board" id="game-area">
 
     </div>
+    <div class="modal fade" id="messageModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 </body>
 </html>

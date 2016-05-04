@@ -4,7 +4,7 @@
 
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
-
+    
     $("#new-game").click(function () {
         var p1Name = $("#player-1").val();
         var p2Name = $("#player-2").val();
@@ -17,8 +17,7 @@ $(document).ready(function () {
         player2 = new Player(p2Name, "o");
         currentPlayer = player1;
     });
-
-
+    
     $("#X").click(function () {
         console.log('X clicked');
        //current player value becomes 'x'
@@ -102,6 +101,7 @@ function TicTacToe(number, win) {
                 this.checkWin(this.rightDWin(x, y), value)
             ) {
                 console.log('win');
+                win_modal('win');
             }
         }
     };
