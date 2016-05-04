@@ -4,15 +4,20 @@
 
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
-    var gameBoard = new TicTacToe(4, 3);
-    gameBoard.buildBoard();
 
-    
-    player1 = new Player("Jon", "x");
-    player2 = new Player("Jason", "o");
+    $("#new-game").click(function () {
+        var p1Name = $("#player-1").val();
+        var p2Name = $("#player-2").val();
+        var size = $("input[name = game-size]:checked").val();
+        var toWin = $("input[name = to-win]:checked").val();
 
-    //hard coding creating a player, make dynamic
-    currentPlayer = player1;
+        var gameBoard = new TicTacToe(size, toWin);
+        gameBoard.buildBoard();
+        player1 = new Player(p1Name, "x");
+        player2 = new Player(p2Name, "o");
+        currentPlayer = player1;
+    });
+
 
     $("#X").click(function () {
         console.log('X clicked');
