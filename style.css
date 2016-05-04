@@ -12,11 +12,17 @@ body{
     /*background-color:black;*/
     /*opacity: 0.5;*/
 }
+
 .x{
     cursor: url("images/blueX1.png"), auto;
 }
+
 .o{
-    cursor: url("images/blueX1.png"), auto;
+    cursor: url("images/imageO.png"), auto;
+}
+.option{
+    width: 33%;
+    float: left;
 }
 .square{
     box-sizing:border-box;
