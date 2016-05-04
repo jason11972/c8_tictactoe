@@ -6,11 +6,16 @@ var currentPlayer = null;
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
     var settings = getSettings();
-
-    // settings.exists = false;
     
-    //reloads settings if they exist
-    if (settings.exists){
+    if(settings.exists){
+        $("#setting_modal").modal('show');
+    } else {
+        $('#settingsModal').modal('show');
+    }
+    
+    
+    $("#Yes").click(function () {
+        $("#setting_modal").modal("hide");
         var size = settings.number;
         var toWin = settings.win;
         gameBoard = new TicTacToe(size, toWin);
@@ -20,14 +25,14 @@ $(document).ready(function () {
         player2 = settings.player2;
         currentPlayer = settings.currentPlayer;
         displayName(currentPlayer.name);
-
+    
         //sets cursor type based on player value
         if(currentPlayer.value = 'x'){
             $("#game-area").addClass('x').removeClass('o');
         } else {
             $("#game-area").addClass('o').removeClass('x');
         }
-
+    
         //sets image background for squares with a value
         for (var i = 0; i < gameBoard.valueArray.length; i++){
             var yesCls = null;
@@ -40,9 +45,9 @@ $(document).ready(function () {
                     yesCls = 'O-square';
                     noCls = 'X-square';
                 }
-
+            
                 var id = gameBoard.sqArray[i];
-                
+            
                 $(".square").each(function () {
                     if ($(this).attr("square") == id){
                         $(this).addClass(yesCls);
@@ -50,10 +55,13 @@ $(document).ready(function () {
                 })
             }
         }
-    } else {
+    });
+    
+    $("#No").click(function () {
+        $("#setting_modal").modal("hide");
         $('#settingsModal').modal('show');
-    }
-
+    });
+ 
     //saves settings when window closes
     $(window).unload(gameSettings);
     
