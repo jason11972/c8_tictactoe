@@ -5,14 +5,11 @@
     <title>TicTacToe</title>
     <link type="text/css" rel="stylesheet" href="style.css">
     <script> src ="https://code.jquery.com/jquery-2.1.4.min.js"</script>
-    <script src="c8_tictactoe.js"></script>
-    <script src="dom_creation.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script><!--bootstrap file-->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <script src="dom_creation.js"></script>
 </head>
@@ -34,7 +31,7 @@
         <li class="valueTBD1">Value TBD:</li>
         <li class="valueTBD2">Value TBD:</li>
         <!--choose X-->
-        <button class="chooseX" type="button">Choose X!</button>
+        <button class="chooseX" id="X" type="button">Choose X!</button>
         <!--choos 0-->
         <button class="chooseO" type="button">Choose 0!</button>
 
@@ -66,9 +63,10 @@
 
 
 
+
     </ul>
 </div>
-    <div class="game_board">
+    <div class="game_board" id="game-area">
 
     </div>
 </body>

@@ -1,6 +1,6 @@
 body{
     margin: 0;
- /*  background-image: url('images/endless_tic_tac_toe_wallpaper_by_wuflux_biscuits-d3d07m5.jpg');  */
+
 }
 
 .container-fluid{
@@ -40,9 +40,10 @@ header {
     width: 100%;
     color: deeppink;
     font-size: 3vh;
-    background-image: url("images/xoxoxox2.jpg");
+    background-image: url('images/endless_tic_tac_toe_wallpaper_by_wuflux_biscuits-d3d07m5.jpg');
+    background:
     border: solid darkblue;
-    font-family: "Comic Sans MS";
+    font-family: Arial, sans-serif
     display:inline-block;
     text-align:center;
     font-weight: bold;
@@ -87,3 +88,4 @@ header {
     color:white;
     float:left;
 }
+
