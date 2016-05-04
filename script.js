@@ -4,16 +4,20 @@
 
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
-    var gameBoard = new TicTacToe(4, 3);
-    gameBoard.buildBoard();
+    
+    $("#new-game").click(function () {
+        var p1Name = $("#player-1").val();
+        var p2Name = $("#player-2").val();
+        var size = $("input[name = game-size]:checked").val();
+        var toWin = $("input[name = to-win]:checked").val();
 
-    player1 = new Player("Jon", "x");
-    player2 = new Player("Jason", "o");
-    choose_game_options();
-
-    //hard coding creating a player, make dynamic
-    currentPlayer = player1;
-
+        var gameBoard = new TicTacToe(size, toWin);
+        gameBoard.buildBoard();
+        player1 = new Player(p1Name, "x");
+        player2 = new Player(p2Name, "o");
+        currentPlayer = player1;
+    });
+    
     $("#X").click(function () {
         console.log('X clicked');
        //current player value becomes 'x'
@@ -45,19 +49,19 @@ $(document).ready(function () {
             currentPlayer = player1;
         }
 
+        //call clicked method
         gameBoard.clicked(id, value);
-
     });
 });
 
+//CONSTRUCTOR FOR GAME
 function TicTacToe(number, win) {
     this.number = number;
     this.win = win;
     this.sqArray = [];
     this.valueArray = [];
     this.squaresFilled = 0;
-
-
+    
     //Method To Build Board
     this.buildBoard = function () {
         for (var i = 0; i < this.number; i++) {
