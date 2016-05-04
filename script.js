@@ -5,26 +5,36 @@
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
     choose_game_options();
-    
+
     $("#new-game").click(function () {
-        var p1Name = $("#player-1").val();
-        var p2Name = $("#player-2").val();
+        $("#settingsModal").modal("hide");
+        if($("#player-1").val() == ''){
+            var p1Name = 'Player 1';
+        } else {
+            var p1Name = $("#player-1").val();
+        }
+        if($("#player-2").val() == ''){
+            var p2Name = 'Player 2';
+        } else {
+            var p2Name = $("#player-2").val();
+        }
         var size = $("input[name = game-size]:checked").val();
         var toWin = $("input[name = to-win]:checked").val();
-
-        var gameBoard = new TicTacToe(size, toWin);
+    
+        gameBoard = new TicTacToe(size, toWin);
         gameBoard.buildBoard();
         player1 = new Player(p1Name, "x");
         player2 = new Player(p2Name, "o");
         currentPlayer = player1;
+        displayName(currentPlayer.name);
     });
-    
+
     $("#X").click(function () {
         console.log('X clicked');
        //current player value becomes 'x'
         currentPlayer.value = 'x';
         console.log(currentPlayer);
-        $(".game-area").addClass('x').removeClass('o');
+        $(".game_board").addClass('x').removeClass('o');
     });
 
     $("#O").click(function () {
@@ -32,7 +42,7 @@ $(document).ready(function () {
         console.log('O clicked');
         currentPlayer.value = 'o';
         console.log(currentPlayer);
-        $(".game-area").addClass('o').removeClass('x');
+        $(".game_board").addClass('o').removeClass('x');
     });
 
     $("#game-area").on("click", "div.square", function () {
@@ -42,13 +52,6 @@ $(document).ready(function () {
 
         //set value to square
         $(this).text(value);
-
-        //switch players
-        if(currentPlayer == player1){
-            currentPlayer = player2;
-        } else {
-            currentPlayer = player1;
-        }
 
         //call clicked method
         gameBoard.clicked(id, value);
@@ -102,8 +105,21 @@ function TicTacToe(number, win) {
                 this.checkWin(this.rightDWin(x, y), value)
             ) {
                 console.log('win');
-                win_modal('win');
+                win_modal(currentPlayer.name);
             }
+        }
+        //switch players
+        if(currentPlayer == player1){
+            currentPlayer = player2;
+        } else {
+            currentPlayer = player1;
+        }
+        displayName(currentPlayer.name);
+        //set cursor based on player value
+        if(currentPlayer.value = 'x'){
+            $(".game_board").addClass('x').removeClass('o');
+        } else {
+            $(".game_board").addClass('o').removeClass('x');
         }
     };
 
@@ -182,3 +198,6 @@ function Player(name, value) {
     this.value = value;
 }
 
+function displayName(name) {
+    $("#current_player").html(name + "'s turn");
+}

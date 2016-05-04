@@ -16,19 +16,29 @@ TicTacToe.prototype.domObj = function (id) {
     $(".game_board").append(square);
 };
 
-function win_modal(message) {                //win modal function, passed one parameter
-    $("#messageModal .modal-body").fadeIn().html("<h4>" + message + "</h4><br>").addClass('text');//modal showing choose game option message
-    $('.modal-footer').html("<h4></h4>");        //modal footer message
-    $("#messageModal").modal('show');   //showing modal
+
+//TODO I hard coded the modals. Since they won't be changing it was simpler to style them
+
+function win_modal(winner) {                //win modal function, passed one parameter
+    // $("#messageModal .modal-body").fadeIn().html("<h4>" + message + "</h4><br>").addClass('text');//modal showing choose game option message
+    // $('.modal-footer').html("<h4></h4>");        //modal footer message
+    // $("#messageModal").modal('show');   //showing modal
+
+    $('#winModal h4').html(winner + ' wins the game!');
+    $("#winModal").modal("show");
 }
+
+
 
 function choose_game_options() {
     //game area is hidden until user picks game bord size
-    $('.game_board').hide();
+    // $('.game_board').hide();
     //this modal will come up and user can choose game options and input their name
-    $('#messageModal .modal-body').fadeIn().html('<h4></h4><br>').addClass('text');
+    // $('#settingsModal .modal-body').fadeIn().html('<h4></h4><br>').addClass('text');
     //showing modal
-    $('#messageModal').modal('show');
+    $('#settingsModal').modal('show');
+
+/*
 
     //set modal message
     var message = $('<h4>').html('Choose from the following options');
@@ -50,7 +60,7 @@ function choose_game_options() {
     //combine player names into one div
     player1_label.append(player1);
     player2_label.append(player2);
-    playerNames.append(player1_label, br, player2_label);
+    playerNames.append(player1_label, br, br, player2_label);
 
     //board size options
     var boardOptions = $('<div>').addClass('option');
@@ -59,17 +69,17 @@ function choose_game_options() {
     var five = $("<input>").attr({'type': 'radio', 'name': 'game-size', 'id': 'five', 'value': 5});
     var six = $("<input>").attr({'type': 'radio', 'name': 'game-size', 'id': 'six', 'value': 6});
     //board size labels
-    var threeLabel = $('<label>').html('<p>3x3 Game</p>').attr('for', 'three');
-    var fourLabel = $('<label>').html('<p>4x4 Game</p>').attr('for', 'four');
-    var fiveLabel = $('<label>').html('<p>5x5 Game</p>').attr('for', 'five');
-    var sixLabel = $('<label>').html('<p>6x6 Game</p>').attr('for', 'six');
+    var threeLabel = $('<label>').html('<p>3x3 Game</p>').attr('for', 'three').css('display', 'block');
+    var fourLabel = $('<label>').html('<p>4x4 Game</p>').attr('for', 'four').css('display', 'block');
+    var fiveLabel = $('<label>').html('<p>5x5 Game</p>').attr('for', 'five').css('display', 'block');
+    var sixLabel = $('<label>').html('<p>6x6 Game</p>').attr('for', 'six').css('display', 'block');
 
     //combine all board options
-    threeLabel.append(three);
-    fourLabel.append(four);
-    fiveLabel.append(five);
-    sixLabel.append(six);
-    boardOptions.append(threeLabel, br, fourLabel, br, fiveLabel, br, sixLabel);
+    threeLabel.append(three, br);
+    fourLabel.append(four, br);
+    fiveLabel.append(five, br);
+    sixLabel.append(six, br);
+    boardOptions.append(threeLabel, fourLabel, fiveLabel, sixLabel);
 
     //win condition options
     var winOptions = $("<div>").addClass('option');
@@ -90,5 +100,9 @@ function choose_game_options() {
     winSixLabel.append(winSix);
     winOptions.append(winThreeLabel, br, winFourLabel, br, winFiveLabel, br, winSixLabel);
 
-    $('.modal-body').append(playerNames, boardOptions, winOptions);
+    //button
+    var button = $('<button>').attr({'type': 'button', 'id': 'new-game'});
+    $('.modal-body').append(playerNames, boardOptions, winOptions, button);
+
+*/
 }
