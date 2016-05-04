@@ -1,69 +1,106 @@
 body{
     margin: 0;
+<<<<<<< HEAD
     background-image: url("http://photobugphotobooth.com/wp-content/uploads/2012/04/lego-background.jpg");
-}
-.game_board{
-    width:50vw;
-    height:80vh;
-    border:1vh solid white;
-    float: left;
-    margin-left: 1%;
-    margin-bottom: 2%;
-    /*background-color:black;*/
-    /*opacity: 0.5;*/
-}
-.x{
-    cursor: url("images/blueX1.png"), auto;
-}
-.o{
-    cursor: url("images/blueX1.png"), auto;
+=======
+>>>>>>> 1fac9983b1f14796496a60630c94ef804b76b160
 }
 
-.square{
-    box-sizing:border-box;
-    float:left;
-    /*background-color:red;*/
-    border:1px solid white;
+/*Modal Styling*/
+.option{
+    width: 33%;
+    float: left;
+    text-align: center;
 }
-header {
-    #width: 100%;
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-body {
+    height: 230px;
+}
+
+#new-game {
+    float: right;
+}
+
+/*Main Board Layout*/
+.screen {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+.center {
+    height: 100%;
+    width: 80vh;
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+.title{
     height: 10vh;
-    color: deeppink;
-    font-size: 3vh;
-    #border: solid darkblue;
-    font-family: Calibri;
-    #display:inline-block;
-    text-align:center;
-    font-weight: bold;
-}
-.navbar {
-    font-size: 20px;
-    list-style-type: none;
-    display: inline-flex;
     margin: 0;
-    padding: 0;
-    color:deeppink;
+    position: relative;
+    top: 5vh;
 }
-.play, .settings, .about  {
-    margin:1%;
-}
-/*.statssidebar {*/
-    /*color:darkblue;*/
-    /*font-size:30px;*/
-    /*list-style-type:none;*/
-    /*margin:0;*/
-    /*font-family: Arial, sans-serif;*/
-/*}*/
-.statsBar {
-    width: 30vw;
-    float:left;
-    border: 1px solid white;
-}
-.player{
-    width: 50%;
-    height: 15%;
+
+.game_board{
+    width: 80vh;
+    height: 80vh;
+    border: 1vh outset grey;
     margin: auto;
 }
+
+/*Classes to add cursor effects*/
+.x{
+    cursor: url("images/x-small.png"), auto;
+}
+
+.o{
+    cursor: url("images/o-small.png"), auto;
+}
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1fac9983b1f14796496a60630c94ef804b76b160
+.square{
+    box-sizing: border-box;
+    float:left;
+    border: 1px solid black;
+    font-size: 24px;
+    text-align: center;
+}
+
+.X-square {
+    background-image: url("images/X.png");
+    background-size: contain;
+}
+
+.O-square {
+    background-image: url("images/O.png");
+    background-size: contain;
+
+}
+
+.square:hover {
+    background-color: lightgrey;
+}
+
+.statsBar {
+    position: absolute;
+    text-align: center;
+    left: 80px;
+    top: 40px;
+}
+
+#current_player {
+    clear: both;
+}
+<<<<<<< HEAD
 .chooseX, .chooseO {
     font-size:40px;
     margin: 5% 0 5% 10%;
@@ -75,4 +112,14 @@ header {
 .game{
     display: inline-block;
     color: ;
+=======
+
+.choose {
+    width: 45px;
+    margin: 7%;
+}
+
+.choose:hover {
+    transform: scale(1.5);
+>>>>>>> 1fac9983b1f14796496a60630c94ef804b76b160
 }
