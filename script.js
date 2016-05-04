@@ -32,7 +32,7 @@ $(document).ready(function () {
     });
 
     $("#play-again").click(function () {
-       $("#winModal").modal("hide");
+        $("#winModal").modal("hide");
         $("#game-area").html('');
         choose_game_options();
     });
@@ -53,25 +53,27 @@ $(document).ready(function () {
     //handlers for game board sizes
     $("#game-three").change(function () {
         $("#win-four, #win-five, #win-six").attr('disabled', true);
+        $("#win-three").attr('checked', true);
     });
 
     $("#game-four").change(function () {
-            $("#win-five, #win-six").attr('disabled', true);
-            $("#win-four").attr('disabled', false);
+        $("#win-five, #win-six").attr('disabled', true);
+        $("#win-four").attr('disabled', false).attr('checked', true);
     });
 
     $("#game-five").change(function () {
         $("#win-six").attr('disabled', true);
         $("#win-four, #win-five").attr('disabled', false);
+        $("#win-five").attr("checked", true);
     });
 
     $("#game-six").change(function () {
         $("#win-four, #win-five, #win-six").attr('disabled', false);
+        $("#win-six").attr("checked", true);
     });
 
     //click handler for squares
     $("#game-area").on("click", "div.square", function () {
-    // $(".square").on("click", function () {
         var id = $(this).attr("square");
         var value = currentPlayer.value;
 
@@ -119,23 +121,32 @@ function TicTacToe(number, win) {
         var x = parseInt(id[0]);
         var y = parseInt(id[1]);
 
+        //checks to see if there is a value in that position already, if not, increment squaresFilled
         if (this.valueArray[this.sqArray.indexOf(id)] == null) {
             this.squaresFilled++;
         }
 
+        //sets the value in the value array
         this.valueArray[this.sqArray.indexOf(id)] = value;
 
         //if enough squares are filled, check for win
         if (this.squaresFilled >= this.win) {
+            
             if (
+                //calls the checkWin method for each win condition
                 this.checkWin(this.rowWin(x), value) ||
                 this.checkWin(this.colWin(y), value) ||
                 this.checkWin(this.leftDWin(x, y), value) ||
                 this.checkWin(this.rightDWin(x, y), value)
             ) {
-                console.log('win');
-                win_modal(currentPlayer.name);
+                //calls win modal if it is a win
+                win_modal(currentPlayer.name + "Wins!");
+            } else if (this.valueArray.indexOf(null) == -1){
+                //calls win modal if it is a draw
+                win_modal('Draw!');
             }
+
+
         }
         //switch players
         if(currentPlayer == player1){
@@ -143,11 +154,11 @@ function TicTacToe(number, win) {
         } else {
             currentPlayer = player1;
         }
+
+        //display current player's name
         displayName(currentPlayer.name);
+
         //set cursor based on player value
-
-        console.log(currentPlayer);
-
         if(currentPlayer.value == 'x'){
             $("#game-area").addClass('x').removeClass('o');
         } else {
@@ -184,7 +195,7 @@ function TicTacToe(number, win) {
             y = Math.abs(x - y);
             x = 0;
         }
-        //staring there, loop until bottom right
+        //staring there, loop until bottom right while both x and y are less than the number of rows
         while (x < this.number && y < this.number) {
             leftWin.push('' + x + y);
             x++;
@@ -196,10 +207,12 @@ function TicTacToe(number, win) {
     //Method To Generate Right Diagonal Win Condition
     this.rightDWin = function (x, y) {
         var rightWin = [];
+        //finds the top right corner
         while (x - 1 >= 0 && y + 1 < this.number - 1) {
             x--;
             y++;
         }
+        //fills the temporary array going down and to the left
         while (x < this.number && y >= 0) {
             rightWin.push('' + x + y);
             x++;
@@ -211,8 +224,10 @@ function TicTacToe(number, win) {
     //Method To Check Win Conditions
     this.checkWin = function (array, value) {
         var match = 0;
+        //loop through win condition array checking for matches
         for (var i = 0; i < array.length; i++) {
             if (match != this.win) {
+                //checks value array at same position in reference array
                 if (this.valueArray[this.sqArray.indexOf(array[i])] == value) {
                     match++;
                 } else {
@@ -220,6 +235,7 @@ function TicTacToe(number, win) {
                 }
             }
         }
+        //returns true if the number of continuous matches equals the total to win
         return (match == this.win);
     };
 }
@@ -230,6 +246,7 @@ function Player(name, value) {
     this.value = value;
 }
 
+//Function to display name
 function displayName(name) {
     $("#current_player").html(name + "'s turn");
 }

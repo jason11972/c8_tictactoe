@@ -24,7 +24,7 @@ function win_modal(winner) {                //win modal function, passed one par
     // $('.modal-footer').html("<h4></h4>");        //modal footer message
     // $("#messageModal").modal('show');   //showing modal
 
-    $('#winModal h4').html(winner + ' wins the game!');
+    $('#winModal h4').html(winner);
     $("#winModal").modal("show");
 }
 
