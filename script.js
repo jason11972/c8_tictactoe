@@ -2,10 +2,12 @@
  * Created by jar4677 on 5/3/16.
  */
 
+var currentPlayer = null;
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
     choose_game_options();
 
+    //click handler for new game
     $("#new-game").click(function () {
         $("#settingsModal").modal("hide");
         if($("#player-1").val() == ''){
@@ -29,29 +31,56 @@ $(document).ready(function () {
         displayName(currentPlayer.name);
     });
 
+    $("#play-again").click(function () {
+       $("#winModal").modal("hide");
+        $("#game-area").html('');
+        choose_game_options();
+    });
+
+    //click handlers for changing mark
     $("#X").click(function () {
-        console.log('X clicked');
        //current player value becomes 'x'
         currentPlayer.value = 'x';
-        console.log(currentPlayer);
-        $(".game_board").addClass('x').removeClass('o');
+        $("#game-area").addClass('x').removeClass('o');
     });
 
     $("#O").click(function () {
         //current player value becomes 'o'
-        console.log('O clicked');
         currentPlayer.value = 'o';
-        console.log(currentPlayer);
-        $(".game_board").addClass('o').removeClass('x');
+        $("#game-area").addClass('o').removeClass('x');
     });
 
+    //handlers for game board sizes
+    $("#game-three").change(function () {
+        $("#win-four, #win-five, #win-six").attr('disabled', true);
+    });
+
+    $("#game-four").change(function () {
+            $("#win-five, #win-six").attr('disabled', true);
+            $("#win-four").attr('disabled', false);
+    });
+
+    $("#game-five").change(function () {
+        $("#win-six").attr('disabled', true);
+        $("#win-four, #win-five").attr('disabled', false);
+    });
+
+    $("#game-six").change(function () {
+        $("#win-four, #win-five, #win-six").attr('disabled', false);
+    });
+
+    //click handler for squares
     $("#game-area").on("click", "div.square", function () {
     // $(".square").on("click", function () {
         var id = $(this).attr("square");
         var value = currentPlayer.value;
 
         //set value to square
-        $(this).text(value);
+        if (currentPlayer.value == 'x'){
+            $(this).addClass('X-square').removeClass('O-square');
+        } else {
+            $(this).addClass('O-square').removeClass('X-square');
+        }
 
         //call clicked method
         gameBoard.clicked(id, value);
@@ -65,7 +94,7 @@ function TicTacToe(number, win) {
     this.sqArray = [];
     this.valueArray = [];
     this.squaresFilled = 0;
-    
+
     //Method To Build Board
     this.buildBoard = function () {
         for (var i = 0; i < this.number; i++) {
@@ -116,10 +145,13 @@ function TicTacToe(number, win) {
         }
         displayName(currentPlayer.name);
         //set cursor based on player value
-        if(currentPlayer.value = 'x'){
-            $(".game_board").addClass('x').removeClass('o');
+
+        console.log(currentPlayer);
+
+        if(currentPlayer.value == 'x'){
+            $("#game-area").addClass('x').removeClass('o');
         } else {
-            $(".game_board").addClass('o').removeClass('x');
+            $("#game-area").addClass('o').removeClass('x');
         }
     };
 

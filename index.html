@@ -13,17 +13,18 @@
     <script src="dom_creation.js"></script>
 </head>
 <body>
-
 <!--STATS sidebar-->
 <div class="statsBar">
     <h3>Choose your mark:</h3>
-    <button class="choose" id="X" type="button">X</button>
-    <button class="choose" id="O" type="button">O</button>
+    <img src="images/X.png" class="choose" id="X" type="button">
+    <img src="images/O.png" class="choose" id="O" type="button">
     <h3 id="current_player"></h3>
 </div>
-<div class="center">
-    <h1 class="title">TIC-TAC-TOE</h1>
-    <div class="game_board x" id="game-area"></div>
+<div id="screen">
+    <div class="center">
+        <h1 class="title">TIC-TAC-TOE</h1>
+        <div class="game_board x" id="game-area"></div>
+    </div>
 </div>
 <!--modal for settings-->
 <div class="modal fade" id="settingsModal" role="dialog">
@@ -62,13 +63,13 @@
                     <input type="radio" name="to-win" id="win-three" value="3" checked>
                     <label for="win-three">3</label><br>
                     <br>
-                    <input type="radio" name="to-win" id="win-four" value="4">
+                    <input type="radio" name="to-win" id="win-four" value="4" disabled="true">
                     <label for="win-four">4</label><br>
                     <br>
-                    <input type="radio" name="to-win" id="win-five" value="5">
+                    <input type="radio" name="to-win" id="win-five" value="5" disabled="true">
                     <label for="win-five">5</label><br>
                     <br>
-                    <input type="radio" name="to-win" id="win-six" value="6">
+                    <input type="radio" name="to-win" id="win-six" value="6" disabled="true">
                     <label for="win-six">6</label><br>
                     <br>
                 </div>
@@ -88,6 +89,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4></h4>
+                <button type="button" id="play-again">Play Again</button>
             </div>
         </div>
 
