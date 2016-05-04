@@ -4,6 +4,7 @@
 
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
+    choose_game_options();
     
     $("#new-game").click(function () {
         var p1Name = $("#player-1").val();
