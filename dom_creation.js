@@ -45,5 +45,10 @@ function gameSettings() {
 
 function getSettings() {
     var settings = JSON.parse(window.localStorage.getItem('settings'));
+    if(settings===null){
+        settings={
+            exists: false
+        }
+    }
     return settings;
 }
