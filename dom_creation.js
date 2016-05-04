@@ -16,7 +16,8 @@ TicTacToe.prototype.domObj = function (id) {
     $(".game_board").append(square);
 };
 
-function win_modal(winner) {
+
+function win_modal(winner) {                //win modal function, passed one parameter
     $('#winModal h4').html(winner);
     $("#winModal").modal("show");
 }

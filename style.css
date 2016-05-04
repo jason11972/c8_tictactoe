@@ -1,22 +1,35 @@
+
 body{
     margin: 0;
     background-image: url('http://www.themesltd.com/backgrounds/random/blue_lego.png');
 
 }
-
+.reset{
+    position: absolute;
+    top:100%;
+    left:40%;
+    background-color: black;
+    #opacity: 0.5;
+    margin-top: 2%;
+    color:white;
+}
 /*Modal Styling*/
 .option{
-    width: 33%;
-    float: left;
+    #width: 33%;
+    #float: left;
     text-align: center;
+    color:white;
 }
-
+#current_player{
+    font-size: 2em;
+}
 .modal-header {
     text-align: center;
 }
 
 .modal-body {
-    height: 230px;
+    height:70vh;
+    background-color: black;
 }
 
 #new-game {
@@ -32,24 +45,20 @@ body{
 
 .center {
     height: 100%;
-    width: 80vh;
-    position: relative;
-    margin: auto;
+    #width: 80vh;
+    #position: relative;
+    #margin: auto;
     text-align: center;
 }
-
+.center>h1{
+    margin-right: 25%;
+    margin-bottom: 1%;
+}
 .title{
     height: 10vh;
     margin: 0;
     position: relative;
     top: 5vh;
-}
-
-.game_board{
-    width: 80vh;
-    height: 80vh;
-    border: 1vh outset grey;
-    margin: auto;
 }
 
 /*Classes to add cursor effects*/
@@ -60,40 +69,46 @@ body{
 .o{
     cursor: url("images/o-small.png"), auto;
 }
-
-
 .square{
     box-sizing: border-box;
     float:left;
-    border: 1px solid black;
+    border: 1px solid white;
     font-size: 24px;
     text-align: center;
+    height: auto;
 }
-
 .X-square {
     background-image: url("images/X.png");
     background-size: contain;
 }
-
 .O-square {
     background-image: url("images/O.png");
     background-size: contain;
-
 }
-
 .square:hover {
     background-color: lightgrey;
+    animation: rainbow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; /*background-color: lightgray;*/
+}
+.game_board{
+    width: 80vh;
+    height: 80vh;
+    border: 1vh outset grey;
+    margin: auto;
+    margin-left: 8%;
+    background-color: black;
 }
 
 .statsBar {
-    position: absolute;
     text-align: center;
     left: 80px;
     top: 40px;
 }
-
-#current_player {
-    clear: both;
+.game_heading>h1{
+    height: 20%;
+    border: 2px solid black;
+    text-align: center;
 }
 
 .choose {
@@ -103,4 +118,26 @@ body{
 
 .choose:hover {
     transform: scale(1.5);
+}
+
+
+@-webkit-keyframes rainbow { /*row hover have this animation effect*/
+    0% {
+        background-color: gray;
+    }
+    20% {
+        background-color: black;
+    }
+    40% {
+        background-color: white;
+    }
+    60% {
+        background-color: gray;
+    }
+    80% {
+        background-color: black;
+    }
+    100% {
+        background-color: white;
+    }
 }
