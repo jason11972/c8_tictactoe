@@ -9,6 +9,7 @@ $(document).ready(function () {
 
     player1 = new Player("Jon", "x");
     player2 = new Player("Jason", "o");
+    choose_game_options();
 
     //hard coding creating a player, make dynamic
     currentPlayer = player1;
@@ -48,8 +49,6 @@ $(document).ready(function () {
 
     });
 });
-
-
 
 function TicTacToe(number, win) {
     this.number = number;
@@ -98,6 +97,7 @@ function TicTacToe(number, win) {
                 this.checkWin(this.rightDWin(x, y), value)
             ) {
                 console.log('win');
+                win_modal('win');
             }
         }
     };
