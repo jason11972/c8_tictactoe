@@ -8,6 +8,7 @@ body{
     left:40%;
     background-color: black;
     #opacity: 0.5;
+    margin-top: 2%;
     color:white;
 }
 /*Modal Styling*/
@@ -17,7 +18,7 @@ body{
     text-align: center;
     color:white;
 }
-.option>h4{
+#current_player{
     font-size: 2em;
 }
 .modal-header {
@@ -27,7 +28,6 @@ body{
 .modal-body {
     height:70vh;
     background-color: black;
-    opacity: 0.5S;
 }
 
 #new-game {
@@ -48,7 +48,10 @@ body{
     #margin: auto;
     text-align: center;
 }
-
+.center>h1{
+    margin-right: 25%;
+    margin-bottom: 1%;
+}
 .title{
     height: 10vh;
     margin: 0;
@@ -83,7 +86,7 @@ body{
 .square:hover {
     background-color: lightgrey;
     animation: rainbow;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-iteration-count: infinite; /*background-color: lightgray;*/
 }
 .game_board{
@@ -96,20 +99,14 @@ body{
 }
 
 .statsBar {
-    #position: absolute;
     text-align: center;
-    /*left: 80px;*/
-    /*top: 40px;*/
+    left: 80px;
+    top: 40px;
 }
 .game_heading>h1{
     height: 20%;
     border: 2px solid black;
-    color:red;
     text-align: center;
-}
-
-#current_player {
-    clear: both;
 }
 
 .choose {
@@ -124,36 +121,21 @@ body{
 
 @-webkit-keyframes rainbow { /*row hover have this animation effect*/
     0% {
-        background-color: rgba(205, 0, 0, 0.5);
-    }
-    10% {
-        background-color: rgba(205, 17, 120, 0.5);
+        background-color: gray;
     }
     20% {
-        background-color: rgba(84, 0, 84, 0.5);
-    }
-    30% {
-        background-color: rgba(0, 0, 205, 0.51);
+        background-color: black;
     }
     40% {
-        background-color: rgba(0, 155, 205, 0.51);
-    }
-    50% {
-        background-color: rgba(20, 134, 128, 0.5);
+        background-color: white;
     }
     60% {
-        background-color: rgba(0, 86, 0, 0.51);
-    }
-    70% {
-        background-color: rgba(142, 203, 33, 0.5);
+        background-color: gray;
     }
     80% {
-        background-color: rgba(205, 205, 0, 0.51);
-    }
-    90% {
-        background-color: rgba(204, 130, 0, 0.51);
+        background-color: black;
     }
     100% {
-        background-color: rgba(153, 40, 0, 0.51);
+        background-color: white;
     }
 }
