@@ -47,7 +47,6 @@ body{
     width: 80vh;
     height: 80vh;
     border: 1vh outset grey;
-    float: left;
     margin: auto;
 }
 
@@ -85,8 +84,10 @@ body{
 }
 
 .statsBar {
-    float: left;
+    position: absolute;
     text-align: center;
+    left: 80px;
+    top: 40px;
 }
 
 #current_player {

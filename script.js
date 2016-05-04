@@ -31,6 +31,12 @@ $(document).ready(function () {
         displayName(currentPlayer.name);
     });
 
+    $("#play-again").click(function () {
+       $("#winModal").modal("hide");
+        $("#game-area").html('');
+        choose_game_options();
+    });
+
     //click handlers for changing mark
     $("#X").click(function () {
        //current player value becomes 'x'
