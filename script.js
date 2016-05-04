@@ -5,8 +5,58 @@
 var currentPlayer = null;
 //DOCUMENT READY FOR EVENT HANDLERS
 $(document).ready(function () {
-    choose_game_options();
+    var settings = getSettings();
 
+    // settings.exists = false;
+    
+    //reloads settings if they exist
+    if (settings.exists){
+        var size = settings.number;
+        var toWin = settings.win;
+        gameBoard = new TicTacToe(size, toWin);
+        gameBoard.buildBoard();
+        gameBoard.valueArray = settings.valueArray;
+        player1 = settings.player1;
+        player2 = settings.player2;
+        currentPlayer = settings.currentPlayer;
+        displayName(currentPlayer.name);
+
+        //sets cursor type based on player value
+        if(currentPlayer.value = 'x'){
+            $("#game-area").addClass('x').removeClass('o');
+        } else {
+            $("#game-area").addClass('o').removeClass('x');
+        }
+
+        //sets image background for squares with a value
+        for (var i = 0; i < gameBoard.valueArray.length; i++){
+            var yesCls = null;
+            var noCls = null;
+            if (gameBoard.valueArray[i] != null){
+                if (gameBoard.valueArray[i] == 'x'){
+                    yesCls = 'X-square';
+                    noCls = 'O-square';
+                } else {
+                    yesCls = 'O-square';
+                    noCls = 'X-square';
+                }
+
+                var id = gameBoard.sqArray[i];
+                
+                $(".square").each(function () {
+                    if ($(this).attr("square") == id){
+                        $(this).addClass(yesCls);
+                    }
+                })
+            }
+        }
+    } else {
+        $('#settingsModal').modal('show');
+    }
+
+    //saves settings when window closes
+    $(window).unload(gameSettings);
+    
     //click handler for new game
     $("#new-game").click(function () {
         $("#settingsModal").modal("hide");
@@ -34,7 +84,12 @@ $(document).ready(function () {
     $("#play-again").click(function () {
         $("#winModal").modal("hide");
         $("#game-area").html('');
-        choose_game_options();
+        $('#settingsModal').modal('show');
+    });
+
+    $("#reset").click(function () {
+        $('#settingsModal').modal('show');
+        $("#game-area").html('');
     });
 
     //click handlers for changing mark
@@ -140,7 +195,7 @@ function TicTacToe(number, win) {
                 this.checkWin(this.rightDWin(x, y), value)
             ) {
                 //calls win modal if it is a win
-                win_modal(currentPlayer.name + "Wins!");
+                win_modal(currentPlayer.name + " Wins!");
             } else if (this.valueArray.indexOf(null) == -1){
                 //calls win modal if it is a draw
                 win_modal('Draw!');
