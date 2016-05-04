@@ -19,6 +19,9 @@ body{
     text-align: center;
     color:white;
 }
+.option input{
+    color: black;
+}
 #current_player{
     font-size: 2em;
 }
