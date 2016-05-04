@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: black;
+    background-color: pink;
 }
 .game_board{
     width:50vw;
@@ -22,7 +22,7 @@ body{
     box-sizing:border-box;
     float:left;
     /*background-color:red;*/
-    border:1px solid black;
+    border:1px solid white;
 }
 header {
     #width: 100%;
