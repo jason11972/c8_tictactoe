@@ -4,84 +4,103 @@ body{
 
 }
 
-.container-fluid{
-    border: 10px solid black;
-    height: 100vh;
+/*Modal Styling*/
+.option{
+    width: 33%;
+    float: left;
+    text-align: center;
 }
 
-/*body {*/
-    /*background-image: url("images/tic-tac-toe-background-14627769.jpg");*/
-    /*background-repeat:no-repeat;*/
-    /*background-size:100%;*/
-    /*padding-top:0;*/
-    /*margin-top:0;*/
-/*}*/
+.modal-header {
+    text-align: center;
+}
+
+.modal-body {
+    height: 230px;
+}
+
+#new-game {
+    float: right;
+}
+
+/*Main Board Layout*/
+.screen {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+.center {
+    height: 100%;
+    width: 80vh;
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+.title{
+    height: 10vh;
+    margin: 0;
+    position: relative;
+    top: 5vh;
+}
 
 .game_board{
-    width:60vw;
-    height:75vh;
-    border:1vh solid black;
+    width: 80vh;
+    height: 80vh;
+    border: 1vh outset grey;
     margin: auto;
-    margin-bottom: 2%;
-    background-color:black;
-    opacity: 0.5;
-    cursor: url("images/blueX1.png"), auto;
 }
 
-.card{
-    box-sizing:border-box;
+/*Classes to add cursor effects*/
+.x{
+    cursor: url("images/x-small.png"), auto;
+}
+
+.o{
+    cursor: url("images/o-small.png"), auto;
+}
+
+
+.square{
+    box-sizing: border-box;
     float:left;
-    background-color:red;
-    border:1px solid white;
+    border: 1px solid black;
+    font-size: 24px;
+    text-align: center;
 }
 
-header {
-    width: 100%;
-    color: deeppink;
-    font-size: 3vh;
-    border: solid darkblue;
-    font-family: "Comic Sans MS";
-    display:inline-block;
-    text-align:center;
-    font-weight: bold;
+.X-square {
+    background-image: url("images/X.png");
+    background-size: contain;
 }
 
-.navbar {
-    font-size: 20px;
-    list-style-type: none;
-    display: inline-flex;
-    margin: 0;
-    padding: 0;
-    color:deeppink;
-}
-
-.play, .settings, .about  {
-    margin:1%;
+.O-square {
+    background-image: url("images/O.png");
+    background-size: contain;
 
 }
 
-.statssidebar {
-    color:darkblue;
-    font-size:30px;
-    list-style-type:none;
-    margin:0;
-    font-family: Arial, sans-serif;
+.square:hover {
+    background-color: lightgrey;
 }
 
-.statsbar {
-    float:left;
-    display:inline-flex;
+.statsBar {
+    position: absolute;
+    text-align: center;
+    left: 80px;
+    top: 40px;
 }
 
-.games-played, .attempts, .accuracy {
-    margin-top:10%;
+#current_player {
+    clear: both;
 }
 
-.chooseX, .chooseO {
-    font-size:40px;
-    margin: 5% 0 5% 10%;
-    background-color:darkblue;
-    font-family: Arial, sans-serif;
-    color:white;
-    float:left;
+.choose {
+    width: 45px;
+    margin: 7%;
+}
+
+.choose:hover {
+    transform: scale(1.5);
 }
