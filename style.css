@@ -1,8 +1,5 @@
 body{
-    height: 100vh;
-    width: 100vw;
     margin: 0;
-    position: fixed;
 }
 
 /*Modal Styling*/
@@ -16,11 +13,21 @@ body{
     text-align: center;
 }
 
+.modal-body {
+    height: 230px;
+}
+
 #new-game {
     float: right;
 }
 
 /*Main Board Layout*/
+.screen {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
 .center {
     height: 100%;
     width: 80vh;
@@ -46,11 +53,11 @@ body{
 
 /*Classes to add cursor effects*/
 .x{
-    cursor: url("images/blueX1.png"), auto;
+    cursor: url("images/x-small.png"), auto;
 }
 
 .o{
-    cursor: url("images/imageO.png"), auto;
+    cursor: url("images/o-small.png"), auto;
 }
 
 
@@ -62,10 +69,24 @@ body{
     text-align: center;
 }
 
+.X-square {
+    background-image: url("images/X.png");
+    background-size: contain;
+}
+
+.O-square {
+    background-image: url("images/O.png");
+    background-size: contain;
+
+}
+
+.square:hover {
+    background-color: lightgrey;
+}
 
 .statsBar {
-    width: 30vw;
     float: left;
+    text-align: center;
 }
 
 #current_player {
@@ -73,10 +94,10 @@ body{
 }
 
 .choose {
-    font-size:40px;
-    margin: 5% 0 5% 10%;
-    background-color: grey;
-    font-family: Arial, sans-serif;
-    color:white;
-    float:left;
+    width: 45px;
+    margin: 7%;
+}
+
+.choose:hover {
+    transform: scale(1.5);
 }
