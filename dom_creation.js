@@ -38,9 +38,9 @@ function choose_game_options(){
     player1_label.append(player1);
     player2_label.append(player2);
 
-    var game_one = $("<input>").attr({'type':'radio','name':'option'}).addClass('game1');    //game1 radio button created
-    var game_two = $("<input>").attr({'type':'radio','name':'option'}).addClass('game2');    //game2 radio button created
-    var game_three = $("<input>").attr({'type':'radio','name':'option'}).addClass('game3');    //game2 radio button created
+    var game_one = $("<input>").attr({'type':'radio','name':'option'}).addClass('game game1');    //game1 radio button created
+    var game_two = $("<input>").attr({'type':'radio','name':'option'}).addClass('game2 game');    //game2 radio button created
+    var game_three = $("<input>").attr({'type':'radio','name':'option'}).addClass('game3 game');    //game2 radio button created
 
     var game1_label = $('<label>').html('<p>game 1 </p><h5>(regular 9 box tic tac toe game)</h5>');        //game1 label created
     var brake = $('<br>');                                                                           //brake tag created
