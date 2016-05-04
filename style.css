@@ -1,24 +1,33 @@
+
 body{
     margin: 0;
-<<<<<<< HEAD
-    background-image: url("http://photobugphotobooth.com/wp-content/uploads/2012/04/lego-background.jpg");
-=======
->>>>>>> 1fac9983b1f14796496a60630c94ef804b76b160
 }
-
+.reset{
+    position: absolute;
+    top:100%;
+    left:40%;
+    background-color: black;
+    #opacity: 0.5;
+    color:white;
+}
 /*Modal Styling*/
 .option{
-    width: 33%;
-    float: left;
+    #width: 33%;
+    #float: left;
     text-align: center;
+    color:white;
 }
-
+.option>h4{
+    font-size: 2em;
+}
 .modal-header {
     text-align: center;
 }
 
 .modal-body {
-    height: 230px;
+    height:70vh;
+    background-color: black;
+    opacity: 0.5S;
 }
 
 #new-game {
@@ -34,9 +43,9 @@ body{
 
 .center {
     height: 100%;
-    width: 80vh;
-    position: relative;
-    margin: auto;
+    #width: 80vh;
+    #position: relative;
+    #margin: auto;
     text-align: center;
 }
 
@@ -47,13 +56,6 @@ body{
     top: 5vh;
 }
 
-.game_board{
-    width: 80vh;
-    height: 80vh;
-    border: 1vh outset grey;
-    margin: auto;
-}
-
 /*Classes to add cursor effects*/
 .x{
     cursor: url("images/x-small.png"), auto;
@@ -62,57 +64,53 @@ body{
 .o{
     cursor: url("images/o-small.png"), auto;
 }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 1fac9983b1f14796496a60630c94ef804b76b160
 .square{
     box-sizing: border-box;
     float:left;
-    border: 1px solid black;
+    border: 1px solid white;
     font-size: 24px;
     text-align: center;
+    height: auto;
 }
-
 .X-square {
     background-image: url("images/X.png");
     background-size: contain;
 }
-
 .O-square {
     background-image: url("images/O.png");
     background-size: contain;
-
 }
-
 .square:hover {
     background-color: lightgrey;
+    animation: rainbow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; /*background-color: lightgray;*/
+}
+.game_board{
+    width: 80vh;
+    height: 80vh;
+    border: 1vh outset grey;
+    margin: auto;
+    margin-left: 8%;
+    background-color: black;
 }
 
 .statsBar {
-    position: absolute;
+    #position: absolute;
     text-align: center;
-    left: 80px;
-    top: 40px;
+    /*left: 80px;*/
+    /*top: 40px;*/
+}
+.game_heading>h1{
+    height: 20%;
+    border: 2px solid black;
+    color:red;
+    text-align: center;
 }
 
 #current_player {
     clear: both;
 }
-<<<<<<< HEAD
-.chooseX, .chooseO {
-    font-size:40px;
-    margin: 5% 0 5% 10%;
-    background-color:darkblue;
-    font-family: Arial, sans-serif;
-    color:white;
-    float:left;
-}
-.game{
-    display: inline-block;
-    color: ;
-=======
 
 .choose {
     width: 45px;
@@ -121,5 +119,41 @@ body{
 
 .choose:hover {
     transform: scale(1.5);
->>>>>>> 1fac9983b1f14796496a60630c94ef804b76b160
+}
+
+
+@-webkit-keyframes rainbow { /*row hover have this animation effect*/
+    0% {
+        background-color: rgba(205, 0, 0, 0.5);
+    }
+    10% {
+        background-color: rgba(205, 17, 120, 0.5);
+    }
+    20% {
+        background-color: rgba(84, 0, 84, 0.5);
+    }
+    30% {
+        background-color: rgba(0, 0, 205, 0.51);
+    }
+    40% {
+        background-color: rgba(0, 155, 205, 0.51);
+    }
+    50% {
+        background-color: rgba(20, 134, 128, 0.5);
+    }
+    60% {
+        background-color: rgba(0, 86, 0, 0.51);
+    }
+    70% {
+        background-color: rgba(142, 203, 33, 0.5);
+    }
+    80% {
+        background-color: rgba(205, 205, 0, 0.51);
+    }
+    90% {
+        background-color: rgba(204, 130, 0, 0.51);
+    }
+    100% {
+        background-color: rgba(153, 40, 0, 0.51);
+    }
 }
