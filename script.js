@@ -80,7 +80,7 @@ $(document).ready(function () {
         }
         var size = $("input[name = game-size]:checked").val();
         var toWin = $("input[name = to-win]:checked").val();
-    
+
         gameBoard = new TicTacToe(size, toWin);
         gameBoard.buildBoard();
         player1 = new Player(p1Name, "x");
@@ -114,25 +114,27 @@ $(document).ready(function () {
     });
 
     //handlers for game board sizes
+    //TODO Anomalies when you select a larger size then go back to a smaller size
     $("#game-three").change(function () {
-        $("#win-four, #win-five, #win-six").attr('disabled', true);
+        $("#win-four, #win-five, #win-six").attr({'checked': false, 'disabled': true});
         $("#win-three").attr('checked', true);
     });
 
     $("#game-four").change(function () {
-        $("#win-five, #win-six").attr('disabled', true);
-        $("#win-four").attr('disabled', false).attr('checked', true);
+        $("#win-five, #win-six").attr({'checked': false, 'disabled': true});
+        $("#win-three").attr('checked', false);
+        $("#win-four").attr({'disabled': false, 'checked': true});
     });
 
     $("#game-five").change(function () {
-        $("#win-six").attr('disabled', true);
-        $("#win-four, #win-five").attr('disabled', false);
-        $("#win-five").attr("checked", true);
+        $("#win-six").attr({'checked': false, 'disabled': true});
+        $("#win-four, #win-three").attr({'checked': false, 'disabled': false});
+        $("#win-five").attr({'disabled': false, 'checked': true});
     });
 
     $("#game-six").change(function () {
-        $("#win-four, #win-five, #win-six").attr('disabled', false);
-        $("#win-six").attr("checked", true);
+        $("#win-four, #win-five, #win-three").attr({'checked': false, 'disabled': false});
+        $("#win-six").attr({'disabled': false, 'checked': true});
     });
 
     //click handler for squares

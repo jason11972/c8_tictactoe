@@ -71,6 +71,7 @@ body{
 .o{
     cursor: url("images/o-small.png"), auto;
 }
+
 .square{
     box-sizing: border-box;
     float:left;
